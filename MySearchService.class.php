@@ -1,6 +1,6 @@
 <?php
 /**
- * LBSÔÆ¼ìË÷·şÎñ²Ù×÷Àà
+ * LBSäº‘æ£€ç´¢æœåŠ¡æ“ä½œç±»
  * @author kuangzhijie
  * @version 1.0
  */
@@ -13,44 +13,44 @@ require_once( SDK_ROOT_PATH . '/constant.php' );
 
 class MySearchService extends MyService {
 	/**
-	 * ¼ìË÷¹Ø¼ü×Ö
+	 * æ£€ç´¢å…³é”®å­—
 	 */
 	private $_query;
 	/**
-	 * É¸Ñ¡±êÇ©
+	 * ç­›é€‰æ ‡ç­¾
 	 */
 	private $_tag;
 	/**
-	 * ÅÅĞò×Ö¶Î¹ıÂËÌõ¼ş
+	 * æ’åºå­—æ®µè¿‡æ»¤æ¡ä»¶
 	 */
 	private $_sort_name = '';
 	/**
-	 * Éı½µĞòÉèÖÃ
+	 * å‡é™åºè®¾ç½®
 	 */
 	private $_sort_rule = '';
 	/**
-	 * ÊıÖµ×Ö¶ÎÉ¸Ñ¡Çø¼ä
+	 * æ•°å€¼å­—æ®µç­›é€‰åŒºé—´
 	 */
 	private $_section = array();
 	/**
-	 * ÊÇ·ñÏÔÊ¾À©Õ¹Êı¾İÉèÖÃ
+	 * æ˜¯å¦æ˜¾ç¤ºæ‰©å±•æ•°æ®è®¾ç½®
 	 */
 	private $_scope = 1;
 	/**
-	 * ·ÖÒ³Ë÷Òı
+	 * åˆ†é¡µç´¢å¼•
 	 */
 	private $_page_index = 0;
 	/**
-	 * ·ÖÒ³ÊıÁ¿
+	 * åˆ†é¡µæ•°é‡
 	 */
 	private $_page_size = 10;
 	/**
-	 * »Øµ÷º¯Êı
+	 * å›è°ƒå‡½æ•°
 	 */
 	private $_callback;
 
 	/**
-	 * ÉèÖÃ¼ìË÷¹Ø¼ü×Ö
+	 * è®¾ç½®æ£€ç´¢å…³é”®å­—
 	 * @param string(45) $q
 	 */
 	public function setQuery( $q = '') {
@@ -58,7 +58,7 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * ÉèÖÃÉ¸Ñ¡±êÇ©tag
+	 * è®¾ç½®ç­›é€‰æ ‡ç­¾tag
 	 * @param string(100) $tag
 	 */
 	public function setTag( $tag = '' ) {
@@ -66,22 +66,22 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * ÉèÖÃÅÅĞò×Ö¶Î¹ıÂËÌõ¼ş
+	 * è®¾ç½®æ’åºå­—æ®µè¿‡æ»¤æ¡ä»¶
 	 * @param $sort_name
 	 */
 	public function setSortName( $sort_name = '' ) {
 		$this->_sort_name = $sort_name;
 	}
 	/**
-	 * ÉèÖÃÉı½µĞò
-	 * @param string(50) 0£º½µĞò£¬1£ºÉıĞò
+	 * è®¾ç½®å‡é™åº
+	 * @param string(50) 0ï¼šé™åºï¼Œ1ï¼šå‡åº
 	 */
 	public function setSortRule( $sort_rule = '' ) {
 		$this->_sort_rule = $sort_rule;
 	}
 
 	/**
-	 * ÉèÖÃÊıÖµ×Ö¶ÎÉ¸Ñ¡Çø¼ä
+	 * è®¾ç½®æ•°å€¼å­—æ®µç­›é€‰åŒºé—´
 	 * @param string $name
 	 * @param string $lower
 	 * @param string $upper
@@ -103,31 +103,31 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * ÉèÖÃÊÇ·ñÏÔÊ¾À©Õ¹×Ö¶Î
-	 * @param uint32 $scope Ã¶¾ÙÖµ£º1. »ù±¾ĞÅÏ¢¡£2. »ù±¾ĞÅÏ¢+À©Õ¹ĞÅÏ¢
+	 * è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ‰©å±•å­—æ®µ
+	 * @param uint32 $scope æšä¸¾å€¼ï¼š1. åŸºæœ¬ä¿¡æ¯ã€‚2. åŸºæœ¬ä¿¡æ¯+æ‰©å±•ä¿¡æ¯
 	 */
 	public function setScope( $scope = 1 ) {
 		$this->_scope = $scope;
 	}
 
 	/**
-	 * ÉèÖÃ·ÖÒ³Ë÷Òı
-	 * @param uint32 $page_index Ä¬ÈÏ£º0
+	 * è®¾ç½®åˆ†é¡µç´¢å¼•
+	 * @param uint32 $page_index é»˜è®¤ï¼š0
 	 */
 	public function setPageIndex( $page_index = 0 ) {
 		$this->_page_index = $page_index;
 	}
 
 	/**
-	 * ÉèÖÃ·ÖÒ³ÊıÁ¿
-	 * @param uint32 $page_size Ä¬ÈÏ£º10£¬ÉÏÏŞ£º50
+	 * è®¾ç½®åˆ†é¡µæ•°é‡
+	 * @param uint32 $page_size é»˜è®¤ï¼š10ï¼Œä¸Šé™ï¼š50
 	 */
 	public function setPageSize( $page_size = 10 ) {
 		$this->_page_size = $page_size;
 	}
 	
 	/**
-	 * ÉèÖÃ»Øµ÷º¯Êı
+	 * è®¾ç½®å›è°ƒå‡½æ•°
 	 * @param string(20) $callback
 	 */
 	public function setCallback( $callback = '' ) {
@@ -136,7 +136,7 @@ class MySearchService extends MyService {
 
 
 	/**
-	 * ÖØÉè¼ìË÷ÉèÖÃÎª³õÊ¼×´Ì¬
+	 * é‡è®¾æ£€ç´¢è®¾ç½®ä¸ºåˆå§‹çŠ¶æ€
 	 */
 	public function reset() {
 		$this->_query = '';
@@ -152,16 +152,16 @@ class MySearchService extends MyService {
 
 
 	/**
-	 * Ê¡ÊĞÇøÄÚµÄ¼ìË÷
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geosearch/poi GETÇëÇó}
+	 * çœå¸‚åŒºå†…çš„æ£€ç´¢
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geosearch/poi GETè¯·æ±‚}
 	 * @param string(50) $databox_id
-	 * @param string(20) $region Ê¡ÊĞÇøÃû³Æ»òid£¬Èç£º±±¾©,131
-	 * @return ³É¹¦·µ»Ø²éÑ¯ĞÅÏ¢£¬½á¹¹ÈçÏÂ£º
-	 *	-type int32 ÁĞ±íÀàĞÍ£¬1£ºpoiÁĞ±í¡£2£º³ÇÊĞÁĞ±í
-	 *	-size int32 ±¾´Î·µ»Ø½á¹û´óĞ¡
-	 *	-total int32 ¼ìË÷½á¹û×ÜÊı
-	 *	-content array ½á¹ûÁĞ±í
-	 *	·ñÔò·µ»Øfalse¡£
+	 * @param string(20) $region çœå¸‚åŒºåç§°æˆ–idï¼Œå¦‚ï¼šåŒ—äº¬,131
+	 * @return æˆåŠŸè¿”å›æŸ¥è¯¢ä¿¡æ¯ï¼Œç»“æ„å¦‚ä¸‹ï¼š
+	 *	-type int32 åˆ—è¡¨ç±»å‹ï¼Œ1ï¼špoiåˆ—è¡¨ã€‚2ï¼šåŸå¸‚åˆ—è¡¨
+	 *	-size int32 æœ¬æ¬¡è¿”å›ç»“æœå¤§å°
+	 *	-total int32 æ£€ç´¢ç»“æœæ€»æ•°
+	 *	-content array ç»“æœåˆ—è¡¨
+	 *	å¦åˆ™è¿”å›falseã€‚
 	 */
 	public function searchRegion( $databox_id, $region ) {
 		$this->resetErrorMsg();
@@ -194,18 +194,18 @@ class MySearchService extends MyService {
 	
 
 	/**
-	 * ÖÜ±ß¼ìË÷£¬¼´·½Ô²ÄÚµÄ¼ìË÷
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geosearch/poi GETÇëÇó}
+	 * å‘¨è¾¹æ£€ç´¢ï¼Œå³æ–¹åœ†å†…çš„æ£€ç´¢
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geosearch/poi GETè¯·æ±‚}
 	 * @param string(50) $databox_id
 	 * @param double $lat
 	 * @param double $lon
-	 * @param uint32 $radius µ¥Î»ÎªÃ×£¬Ä¬ÈÏ1000
-	 * @return ³É¹¦·µ»Ø²éÑ¯ĞÅÏ¢£¬½á¹¹ÈçÏÂ£º
-	 *	-type int32 ÁĞ±íÀàĞÍ£¬1£ºpoiÁĞ±í¡£2£º³ÇÊĞÁĞ±í
-	 *	-size int32 ±¾´Î·µ»Ø½á¹û´óĞ¡
-	 *	-total int32 ¼ìË÷½á¹û×ÜÊı
-	 *	-content array ½á¹ûÁĞ±í
-	 *	·ñÔò·µ»Øfalse¡£
+	 * @param uint32 $radius å•ä½ä¸ºç±³ï¼Œé»˜è®¤1000
+	 * @return æˆåŠŸè¿”å›æŸ¥è¯¢ä¿¡æ¯ï¼Œç»“æ„å¦‚ä¸‹ï¼š
+	 *	-type int32 åˆ—è¡¨ç±»å‹ï¼Œ1ï¼špoiåˆ—è¡¨ã€‚2ï¼šåŸå¸‚åˆ—è¡¨
+	 *	-size int32 æœ¬æ¬¡è¿”å›ç»“æœå¤§å°
+	 *	-total int32 æ£€ç´¢ç»“æœæ€»æ•°
+	 *	-content array ç»“æœåˆ—è¡¨
+	 *	å¦åˆ™è¿”å›falseã€‚
 	 */
 	public function searchNearby( $databox_id, $lat, $lon, $radius = 1000 ) {
 		$this->resetErrorMsg();
@@ -238,19 +238,19 @@ class MySearchService extends MyService {
 
 
 	/**
-	 * ¾ØĞÎ¿òÄÚ¼ìË÷
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geosearch/poi GETÇëÇó}
+	 * çŸ©å½¢æ¡†å†…æ£€ç´¢
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geosearch/poi GETè¯·æ±‚}
 	 * @param string(50) $databox_id
 	 * @param string $west
 	 * @param string $east
 	 * @param string $north
 	 * @param string $south
-	 * @return ³É¹¦·µ»Ø²éÑ¯ĞÅÏ¢£¬½á¹¹ÈçÏÂ£º
-	 *	-type int32 ÁĞ±íÀàĞÍ£¬1£ºpoiÁĞ±í¡£2£º³ÇÊĞÁĞ±í
-	 *	-size int32 ±¾´Î·µ»Ø½á¹û´óĞ¡
-	 *	-total int32 ¼ìË÷½á¹û×ÜÊı
-	 *	-content array ½á¹ûÁĞ±í
-	 *	·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›æŸ¥è¯¢ä¿¡æ¯ï¼Œç»“æ„å¦‚ä¸‹ï¼š
+	 *	-type int32 åˆ—è¡¨ç±»å‹ï¼Œ1ï¼špoiåˆ—è¡¨ã€‚2ï¼šåŸå¸‚åˆ—è¡¨
+	 *	-size int32 æœ¬æ¬¡è¿”å›ç»“æœå¤§å°
+	 *	-total int32 æ£€ç´¢ç»“æœæ€»æ•°
+	 *	-content array ç»“æœåˆ—è¡¨
+	 *	å¦åˆ™è¿”å›falseã€‚
 	 */
 	public function searchBounds( $databox_id, $west, $east, $north, $south) {
 		$this->resetErrorMsg();
@@ -281,11 +281,11 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * ÏêÇé¼ìË÷£¬¼´¸ù¾İID²é¿´POIĞÅÏ¢
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geosearch/detail GETÇëÇó}
+	 * è¯¦æƒ…æ£€ç´¢ï¼Œå³æ ¹æ®IDæŸ¥çœ‹POIä¿¡æ¯
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geosearch/detail GETè¯·æ±‚}
 	 * @param string $poi_id
-	 * @param uint32 $scope Ã¶¾ÙÖµ£º1. »ù±¾ĞÅÏ¢£¨Ä¬ÈÏ£©¡£2.»ù±¾ĞÅÏ¢+À©Õ¹ĞÅÏ¢¡£
-	 * @return ³É¹¦·µ»ØpoiĞÅÏ¢¹ØÁªÊı×é£¬·ñÔò·µ»Øfalse¡£ 
+	 * @param uint32 $scope æšä¸¾å€¼ï¼š1. åŸºæœ¬ä¿¡æ¯ï¼ˆé»˜è®¤ï¼‰ã€‚2.åŸºæœ¬ä¿¡æ¯+æ‰©å±•ä¿¡æ¯ã€‚
+	 * @return æˆåŠŸè¿”å›poiä¿¡æ¯å…³è”æ•°ç»„ï¼Œå¦åˆ™è¿”å›falseã€‚ 
 	 */
 	public function searchDetail( $poi_id, $scope = 1 ) {
 		$this->resetErrorMsg();
@@ -325,7 +325,7 @@ class MySearchService extends MyService {
 
 
 	/**
-	 * ¸ñÊ½»¯filter×Ö¶Î
+	 * æ ¼å¼åŒ–filterå­—æ®µ
 	 * @param string(50) $databox_id
 	 * @ignore
 	 * @return string
@@ -345,8 +345,8 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * »ñÈ¡¿ÉÑ¡Ïî²ÎÊıÊı×é
-	 * @return ¿ÉÑ¡Ïî²ÎÊıµÄ¹ØÁªÊı×é
+	 * è·å–å¯é€‰é¡¹å‚æ•°æ•°ç»„
+	 * @return å¯é€‰é¡¹å‚æ•°çš„å…³è”æ•°ç»„
 	 */
 	private function _getOpts() {
 		$opts = array();
@@ -370,7 +370,7 @@ class MySearchService extends MyService {
 	}
 
 	/**
-	 * ÅĞ¶Ï²ÎÊıÊÇ·ñÓĞĞ§
+	 * åˆ¤æ–­å‚æ•°æ˜¯å¦æœ‰æ•ˆ
 	 * @return boolean
 	 */
 	private function _isValid( $str ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * LBSÔÆ´æ´¢²Ù×÷Àà
+ * LBSäº‘å­˜å‚¨æ“ä½œç±»
  * @package lbs
  * @author kuangzhijie
  * @version 1.0
@@ -13,11 +13,11 @@ require_once( SDK_ROOT_PATH . '/constant.php' );
 
 class MyStorageService extends MyService {
 	/**
-	 * ´´½¨databox
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox?method=create POSTÇëÇó}
+	 * åˆ›å»ºdatabox
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox?method=create POSTè¯·æ±‚}
 	 * @param string $databox_name
-	 * @param int32 $geotype Ã¶¾ÙÖµ£ºGEOTYPE_POINT_POI(default) | GEOTYPE_LINE_POI | GEOTYPE_FLAT_POI
-	 * @return Èç¹û³É¹¦·µ»ØÐÂÔödataboxµÄid£¬·ñÔò·µ»Øfalse;
+	 * @param int32 $geotype æžšä¸¾å€¼ï¼šGEOTYPE_POINT_POI(default) | GEOTYPE_LINE_POI | GEOTYPE_FLAT_POI
+	 * @return å¦‚æžœæˆåŠŸè¿”å›žæ–°å¢ždataboxçš„idï¼Œå¦åˆ™è¿”å›žfalse;
 	 */
 	public function createDatabox( $databox_name, $geotype = GEOTYPE_POINT_POI ) {
 		$this->resetErrorMsg();
@@ -45,11 +45,11 @@ class MyStorageService extends MyService {
 		return false;
 	}
 	/**
-	 * ·¢²¼databox
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox/{id}?method=publish
+	 * å‘å¸ƒdatabox
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox/{id}?method=publish
 	 * @param string $databox_id
-	 * @param boolean $search ÊÇ·ñ·¢²¼µ½¼ìË÷£¬ÖµÎª0»ò1
-	 * @param boolean $bus ÊÇ·ñ·¢²¼µ½¹«½»£¬ÖµÎª0»ò1
+	 * @param boolean $search æ˜¯å¦å‘å¸ƒåˆ°æ£€ç´¢ï¼Œå€¼ä¸º0æˆ–1
+	 * @param boolean $bus æ˜¯å¦å‘å¸ƒåˆ°å…¬äº¤ï¼Œå€¼ä¸º0æˆ–1
 	 */
 	public function publishDatabox( $databox_id, $search = 0, $bus = 0 ) {
 		$this->resetErrorMsg();
@@ -80,11 +80,11 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * ÐÞ¸Ädatabox
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox/{id}?method=update POSTÇëÇó}
+	 * ä¿®æ”¹databox
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox/{id}?method=update POSTè¯·æ±‚}
 	 * @param string $id
 	 * @param string(45) $new_name
-	 * @return ÕýÈ··µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æ­£ç¡®è¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function updateDatabox($id, $new_name) {
 		$this->resetErrorMsg();
@@ -113,10 +113,10 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * É¾³ýdataboxÐÅÏ¢
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox/{id}?method=delete POSTÇëÇó}
+	 * åˆ é™¤databoxä¿¡æ¯
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox/{id}?method=delete POSTè¯·æ±‚}
 	 * @param string $id
-	 * @return ÕýÈ··µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æ­£ç¡®è¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function deleteDatabox($id) {
 		$this->resetErrorMsg();
@@ -144,11 +144,11 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * »ñÈ¡µ¥¸ödataboxÐÅÏ¢
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox/{id}? GETÇëÇó}
+	 * èŽ·å–å•ä¸ªdataboxä¿¡æ¯
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox/{id}? GETè¯·æ±‚}
 	 * @param string $id
-	 * @param string $scope Ã¶¾ÙÖµ£ºSCOPE_BASIC(default) | SCOPE_DETAIL
-	 * @return ³É¹¦·µ»ØÐÅÏ¢¹ØÁªÊý×é£¬·ñÔò·µ»Øfalse¡£
+	 * @param string $scope æžšä¸¾å€¼ï¼šSCOPE_BASIC(default) | SCOPE_DETAIL
+	 * @return æˆåŠŸè¿”å›žä¿¡æ¯å…³è”æ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function getDatabox($id, $scope = SCOPE_BASIC) {
 		$this->resetErrorMsg();
@@ -179,16 +179,16 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * Ìõ¼þ²éÑ¯databox
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databox?method=list GETÇëÇó}
+	 * æ¡ä»¶æŸ¥è¯¢databox
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databox?method=list GETè¯·æ±‚}
 	 * @param string(45) $name
-	 * @param uint32 $page_index ²éÑ¯¼ìË÷Ò³±àºÅ£¬Ä¬ÈÏ£º0
-	 * @param uint32 $page_size ²éÑ¯¼ìË÷Ò³´óÐ¡£¬Ä¬ÈÏ£º10¸ö£¬ÉÏÏÞ1000¸ö
-	 * @return ³É¹¦·µ»Ø¹ØÁªÊý×é½á¹¹ÈçÏÂ£º
-	 *	-size uint32 Êý¾Ý¸öÊý
-	 *	-total uint32 Êý¾Ý×ÜÊý
-	 *	-databox array databoxÁÐ±í
-	 *	·ñÔò·µ»Øfalse¡£
+	 * @param uint32 $page_index æŸ¥è¯¢æ£€ç´¢é¡µç¼–å·ï¼Œé»˜è®¤ï¼š0
+	 * @param uint32 $page_size æŸ¥è¯¢æ£€ç´¢é¡µå¤§å°ï¼Œé»˜è®¤ï¼š10ä¸ªï¼Œä¸Šé™1000ä¸ª
+	 * @return æˆåŠŸè¿”å›žå…³è”æ•°ç»„ç»“æž„å¦‚ä¸‹ï¼š
+	 *	-size uint32 æ•°æ®ä¸ªæ•°
+	 *	-total uint32 æ•°æ®æ€»æ•°
+	 *	-databox array databoxåˆ—è¡¨
+	 *	å¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listDatabox( $name = NULL, $page_index = 0, $page_size = 10) {
 		$this->resetErrorMsg();
@@ -222,9 +222,9 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * Ìõ¼þ²éÑ¯databox£¬²¢·µ»ØÈ«²¿½á¹û
+	 * æ¡ä»¶æŸ¥è¯¢databoxï¼Œå¹¶è¿”å›žå…¨éƒ¨ç»“æžœ
 	 * @param string(45) $name
-	 * @return ³É¹¦Ôò·µ»ØdataboxÁÐ±í£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸåˆ™è¿”å›ždataboxåˆ—è¡¨ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listDataboxAll( $name = NULL ) {
 		$this->resetErrorMsg();
@@ -249,14 +249,14 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * ´´½¨databox_meta
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databoxmeta?method=create POSTÇëÇó}
+	 * åˆ›å»ºdatabox_meta
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databoxmeta?method=create POSTè¯·æ±‚}
 	 * @param string(45) $property_name
 	 * @param string(45) $property_key
-	 * @param uint32 $property_type Ã¶¾ÙÖµ£ºPROPERTY_INT32 | PROPERTY_INT64 | PROPERTY_FLOAT | PROPERTY_DOUBLE | PROPERTY_STRING
+	 * @param uint32 $property_type æžšä¸¾å€¼ï¼šPROPERTY_INT32 | PROPERTY_INT64 | PROPERTY_FLOAT | PROPERTY_DOUBLE | PROPERTY_STRING
 	 * @param string(50) $databox_id
-	 * @param boolean $if_magic_field ÊÇ·ñÎªÅÅÐò×Ö¶Î£¬ÖµÎª0»ò1
-	 * @return ³É¹¦·µ»ØÐÂÔödatabox_metaµÄidÊý×é£¬·ñÔò·µ»Øfalse¡£
+	 * @param boolean $if_magic_field æ˜¯å¦ä¸ºæŽ’åºå­—æ®µï¼Œå€¼ä¸º0æˆ–1
+	 * @return æˆåŠŸè¿”å›žæ–°å¢ždatabox_metaçš„idæ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function createDataboxMeta( $property_name, $property_key, $property_type, $databox_id, $if_magic_field = NULL ) {
 		$this->resetErrorMsg();
@@ -304,13 +304,13 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * ´´½¨¶à¸ödatabox_meta
+	 * åˆ›å»ºå¤šä¸ªdatabox_meta
 	 * @param array $property_name_set
 	 * @param array $property_key_set
-	 * @param array $property_type_set Ã¶¾ÙÖµ£ºPROPERTY_INT32 | PROPERTY_INT64 | PROPERTY_FLOAT | PROPERTY_DOUBLE | PROPERTY_STRING
-	 * @param boolean $if_magic_field_set ÊÇ·ñÎªÅÅÐò×Ö¶Î£¬ÖµÎª0»ò1
+	 * @param array $property_type_set æžšä¸¾å€¼ï¼šPROPERTY_INT32 | PROPERTY_INT64 | PROPERTY_FLOAT | PROPERTY_DOUBLE | PROPERTY_STRING
+	 * @param boolean $if_magic_field_set æ˜¯å¦ä¸ºæŽ’åºå­—æ®µï¼Œå€¼ä¸º0æˆ–1
 	 * @param string(50) $databox_id
-	 * @return ³É¹¦·µ»ØÐÂÔödatabox_metaµÄid(¼ÓÃÜµÄ)Êý×é£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žæ–°å¢ždatabox_metaçš„id(åŠ å¯†çš„)æ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function createDataboxMetaSet( $property_name_set, $property_key_set, $property_type_set, $databox_id, $if_magic_field_set = array() ) {
 		$this->resetErrorMsg();
@@ -396,12 +396,12 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * ÐÞ¸Ädatabox_meta
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databoxmeta/{id}?method=update POSTÇëÇó}
+	 * ä¿®æ”¹databox_meta
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databoxmeta/{id}?method=update POSTè¯·æ±‚}
 	 * @param string $id databox_meta's id
 	 * @param string(45) $new_property_name
-	 * @param boolean $if_magic_field Ä¬ÈÏfalse;
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @param boolean $if_magic_field é»˜è®¤false;
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function updateDataboxMeta( $id, $new_property_name, $if_magic_field = false ) {
 		$this->resetErrorMsg();
@@ -430,10 +430,10 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * É¾³ýdatabox_meta
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databoxmeta/{id}?method=delete POSTÇëÇó}
+	 * åˆ é™¤databox_meta
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databoxmeta/{id}?method=delete POSTè¯·æ±‚}
 	 * @param string $id databox_meta's id
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function deleteDataboxMeta( $id ) {
 		$this->resetErrorMsg();
@@ -461,10 +461,10 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * »ñÈ¡databox_metaÐÅÏ¢
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databoxmeta/{id}? GETÇëÇó}
+	 * èŽ·å–databox_metaä¿¡æ¯
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databoxmeta/{id}? GETè¯·æ±‚}
 	 * @param string $id databox_meta's id
-	 * @return ³É¹¦·µ»Ødatabox_metaµÄÐÅÏ¢£¬´íÎó·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›ždatabox_metaçš„ä¿¡æ¯ï¼Œé”™è¯¯è¿”å›žfalseã€‚
 	 */
 	public function getDataboxMeta( $id ) {
 		$this->resetErrorMsg();
@@ -492,12 +492,12 @@ class MyStorageService extends MyService {
 	
 
 	/**
-	 * Ìõ¼þ²éÑ¯databox_meta
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/databoxmeta?method=list GETÇëÇó}
+	 * æ¡ä»¶æŸ¥è¯¢databox_meta
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/databoxmeta?method=list GETè¯·æ±‚}
 	 * @param string(50) $databox_id
-	 * @param string(45) $property_name ¿ÉÑ¡
-	 * @param uint32 $property_key ¿ÉÑ¡
-	 * @return ³É¹¦·µ»Ødatabox_metaÁÐ±í£¬·ñÔò·µ»Øfalse¡£
+	 * @param string(45) $property_name å¯é€‰
+	 * @param uint32 $property_key å¯é€‰
+	 * @return æˆåŠŸè¿”å›ždatabox_metaåˆ—è¡¨ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listDataboxMeta( $databox_id, $property_name = NULL, $property_key = NULL ) {
 		$this->resetErrorMsg();
@@ -531,26 +531,26 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * ´´½¨POI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi?method=create POSTÇëÇó}
-	 * @param array $opts ´´½¨µÄPOIµÄ²ÎÊýµÄ¹ØÁªÊý×é
-	 *	-name string(100) ±ØÑ¡£¬poiÃû³Æ
-	 *	-original_lat double ±ØÑ¡£¬Î³¶È
-	 *	-original_lon double ±ØÑ¡£¬¾­¶È
-	 *	-original_coord_type ±ØÑ¡£¬Ã¶¾ÙÖµ£ºNATION_ENCRYPT(¹ú²â¾Ö¼ÓÃÜ) | BAIDU_ENCRYPT(°Ù¶È¼ÓÃÜ) | NO_ENCRYPT(Ô­Ê¼GPS×ø±ê)
-	 *	-databox_id string(50) ±ØÑ¡
-	 *	-address string(200) ¿ÉÑ¡
-	 *	-telephone string(45) ¿ÉÑ¡
-	 *	-zip_code string(16) ¿ÉÑ¡
-	 *	-poi_tag string(1000)/array ¿ÉÑ¡£¬poi±êÇ©
-	 *	-poi_importance uint32 ¿ÉÑ¡£¬È¡ÖµÔÚ1-255¼ä£¬Ä¬ÈÏÎª127
-	 *	-category_id uint32 ¿ÉÑ¡£¬poiµÄÀà±ðid
-	 *	-publish_search boolean ¿ÉÑ¡£¬0»ò1£¬Ä¬ÈÏÎª0
-	 *	-publish_bus boolean ¿ÉÑ¡£¬0»ò1£¬Ä¬ÈÏÎª0
-	 *	-geo_sequence string(500k) ¿ÉÑ¡£¬µ±ÎªÏßÃæpoiÊ±£¬±ØÐë²»Îª¿Õ
-	 *	-icon string(100) ¿ÉÑ¡£¬poiµÄÍ¼±ê
-	 *	-baidu_uid uint64 ¿ÉÑ¡£¬°Ù¶ÈµÄpoiuid
-	 * @return ³É¹¦·µ»ØÐÂÔöPOIµÄid£¬·ñÔò·µ»Øfalse¡£
+	 * åˆ›å»ºPOI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi?method=create POSTè¯·æ±‚}
+	 * @param array $opts åˆ›å»ºçš„POIçš„å‚æ•°çš„å…³è”æ•°ç»„
+	 *	-name string(100) å¿…é€‰ï¼Œpoiåç§°
+	 *	-original_lat double å¿…é€‰ï¼Œçº¬åº¦
+	 *	-original_lon double å¿…é€‰ï¼Œç»åº¦
+	 *	-original_coord_type å¿…é€‰ï¼Œæžšä¸¾å€¼ï¼šNATION_ENCRYPT(å›½æµ‹å±€åŠ å¯†) | BAIDU_ENCRYPT(ç™¾åº¦åŠ å¯†) | NO_ENCRYPT(åŽŸå§‹GPSåæ ‡)
+	 *	-databox_id string(50) å¿…é€‰
+	 *	-address string(200) å¯é€‰
+	 *	-telephone string(45) å¯é€‰
+	 *	-zip_code string(16) å¯é€‰
+	 *	-poi_tag string(1000)/array å¯é€‰ï¼Œpoiæ ‡ç­¾
+	 *	-poi_importance uint32 å¯é€‰ï¼Œå–å€¼åœ¨1-255é—´ï¼Œé»˜è®¤ä¸º127
+	 *	-category_id uint32 å¯é€‰ï¼Œpoiçš„ç±»åˆ«id
+	 *	-publish_search boolean å¯é€‰ï¼Œ0æˆ–1ï¼Œé»˜è®¤ä¸º0
+	 *	-publish_bus boolean å¯é€‰ï¼Œ0æˆ–1ï¼Œé»˜è®¤ä¸º0
+	 *	-geo_sequence string(500k) å¯é€‰ï¼Œå½“ä¸ºçº¿é¢poiæ—¶ï¼Œå¿…é¡»ä¸ä¸ºç©º
+	 *	-icon string(100) å¯é€‰ï¼Œpoiçš„å›¾æ ‡
+	 *	-baidu_uid uint64 å¯é€‰ï¼Œç™¾åº¦çš„poiuid
+	 * @return æˆåŠŸè¿”å›žæ–°å¢žPOIçš„idï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function createPoi( $opts ) {
 		$this->resetErrorMsg();
@@ -591,26 +591,26 @@ class MyStorageService extends MyService {
 	
 
 	/**
-	 * ÐÞ¸ÄPOI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi/{id}?method=update POSTÇëÇó}
+	 * ä¿®æ”¹POI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi/{id}?method=update POSTè¯·æ±‚}
 	 * @param string $poi_id
-	 * @param array $opts ´´½¨µÄPOIµÄ²ÎÊýµÄ¹ØÁªÊý×é
-	 *	-name string(100) ¿ÉÑ¡£¬poiÃû³Æ
-	 *	-original_lat double ¿ÉÑ¡£¬Î³¶È£¬¾­¶È´æÔÚÊ±£¬Î³¶ÈÒ²±ØÐë´æÔÚ
-	 *	-original_lon double ¿ÉÑ¡£¬¾­¶È£¬Î³¶È´æÔÚÊ±£¬¾­¶ÈÒ²±ØÐë´æÔÚ
-	 *	-original_coord_type ¿ÉÑ¡£¬Ã¶¾ÙÖµ£ºNATION_ENCRYPT(¹ú²â¾Ö¼ÓÃÜ) | BAIDU_ENCRYPT(°Ù¶È¼ÓÃÜ) | NO_ENCRYPT(Ô­Ê¼GPS×ø±ê)
-	 *	-address string(200) ¿ÉÑ¡
-	 *	-telephone string(45) ¿ÉÑ¡
-	 *	-zip_code string(16) ¿ÉÑ¡
-	 *	-poi_tag string(1000)/array ¿ÉÑ¡£¬poi±êÇ©
-	 *	-poi_importance uint32 ¿ÉÑ¡£¬È¡ÖµÔÚ1-255¼ä£¬Ä¬ÈÏÎª127
-	 *	-category_id uint32 ¿ÉÑ¡£¬poiµÄÀà±ðid
-	 *	-publish_search boolean ¿ÉÑ¡£¬0»ò1£¬Ä¬ÈÏÎª0
-	 *	-publish_bus boolean ¿ÉÑ¡£¬0»ò1£¬Ä¬ÈÏÎª0
-	 *	-geo_sequence string(500k) ¿ÉÑ¡£¬µ±ÎªÏßÃæpoiÊ±£¬±ØÐë²»Îª¿Õ
-	 *	-icon string(100) ¿ÉÑ¡£¬poiµÄÍ¼±ê
-	 *	-baidu_uid uint64 ¿ÉÑ¡£¬°Ù¶ÈµÄpoiuid
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @param array $opts åˆ›å»ºçš„POIçš„å‚æ•°çš„å…³è”æ•°ç»„
+	 *	-name string(100) å¯é€‰ï¼Œpoiåç§°
+	 *	-original_lat double å¯é€‰ï¼Œçº¬åº¦ï¼Œç»åº¦å­˜åœ¨æ—¶ï¼Œçº¬åº¦ä¹Ÿå¿…é¡»å­˜åœ¨
+	 *	-original_lon double å¯é€‰ï¼Œç»åº¦ï¼Œçº¬åº¦å­˜åœ¨æ—¶ï¼Œç»åº¦ä¹Ÿå¿…é¡»å­˜åœ¨
+	 *	-original_coord_type å¯é€‰ï¼Œæžšä¸¾å€¼ï¼šNATION_ENCRYPT(å›½æµ‹å±€åŠ å¯†) | BAIDU_ENCRYPT(ç™¾åº¦åŠ å¯†) | NO_ENCRYPT(åŽŸå§‹GPSåæ ‡)
+	 *	-address string(200) å¯é€‰
+	 *	-telephone string(45) å¯é€‰
+	 *	-zip_code string(16) å¯é€‰
+	 *	-poi_tag string(1000)/array å¯é€‰ï¼Œpoiæ ‡ç­¾
+	 *	-poi_importance uint32 å¯é€‰ï¼Œå–å€¼åœ¨1-255é—´ï¼Œé»˜è®¤ä¸º127
+	 *	-category_id uint32 å¯é€‰ï¼Œpoiçš„ç±»åˆ«id
+	 *	-publish_search boolean å¯é€‰ï¼Œ0æˆ–1ï¼Œé»˜è®¤ä¸º0
+	 *	-publish_bus boolean å¯é€‰ï¼Œ0æˆ–1ï¼Œé»˜è®¤ä¸º0
+	 *	-geo_sequence string(500k) å¯é€‰ï¼Œå½“ä¸ºçº¿é¢poiæ—¶ï¼Œå¿…é¡»ä¸ä¸ºç©º
+	 *	-icon string(100) å¯é€‰ï¼Œpoiçš„å›¾æ ‡
+	 *	-baidu_uid uint64 å¯é€‰ï¼Œç™¾åº¦çš„poiuid
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function updatePoi( $poi_id, $opts = array() ) {
 		$this->resetErrorMsg();
@@ -657,10 +657,10 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * É¾³ýÒ»¸öPOI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi/{id}?method=delete POSTÇëÇó}
+	 * åˆ é™¤ä¸€ä¸ªPOI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi/{id}?method=delete POSTè¯·æ±‚}
 	 * @param string $poi_id
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function deletePoi( $poi_id ) {
 		$this->resetErrorMsg();
@@ -688,10 +688,10 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * É¾³ý¶à¸öPOI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi?method=delete POSTÇëÇó}
-	 * @param array $ids ÒªÉ¾³ýµÄpoiµÄid¼¯£¬×Ö·û´®Ê±ÇëÓÃ°ë½Ç¶ººÅ¸ô¿ª¡£
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * åˆ é™¤å¤šä¸ªPOI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi?method=delete POSTè¯·æ±‚}
+	 * @param array $ids è¦åˆ é™¤çš„poiçš„idé›†ï¼Œå­—ç¬¦ä¸²æ—¶è¯·ç”¨åŠè§’é€—å·éš”å¼€ã€‚
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function deletePoiSet( $ids ) {
 		$this->resetErrorMsg();
@@ -741,11 +741,11 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * ²éÑ¯µ¥¸öPOI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi/{id} GETÇëÇó}
+	 * æŸ¥è¯¢å•ä¸ªPOI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi/{id} GETè¯·æ±‚}
 	 * @param string $poi_id
-	 * @param uint32 $scope Ã¶¾ÙÖµ£ºSCOPE_BASIC(default) | SCOPE_DETAIL
-	 * @return ³É¹¦·µ»ØpoiÐÅÏ¢¹ØÁªÊý×é£¬·ñÔò·µ»Øfalse¡£
+	 * @param uint32 $scope æžšä¸¾å€¼ï¼šSCOPE_BASIC(default) | SCOPE_DETAIL
+	 * @return æˆåŠŸè¿”å›žpoiä¿¡æ¯å…³è”æ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function getPoi( $poi_id, $scope = SCOPE_BASIC ) {
 		$this->resetErrorMsg();
@@ -772,10 +772,10 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * ¸ù¾ÝidÊý×é²éÑ¯¶à¸öPOI
+	 * æ ¹æ®idæ•°ç»„æŸ¥è¯¢å¤šä¸ªPOI
 	 * @param array $poi_ids
-	 * @param uint32 $scope Ã¶¾ÙÖµ£ºSCOPE_BASIC(default) | SCOPE_DETAIL
-	 * @return ³É¹¦·µ»Øpoi¼¯µÄÊý×é¡£
+	 * @param uint32 $scope æžšä¸¾å€¼ï¼šSCOPE_BASIC(default) | SCOPE_DETAIL
+	 * @return æˆåŠŸè¿”å›žpoié›†çš„æ•°ç»„ã€‚
 	 */
 	public function listPoiByIds( $poi_ids, $scope = SCOPE_BASIC ) {
 		$this->resetErrorMsg();
@@ -802,24 +802,24 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * Ìõ¼þ²éÑ¯POI
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi?method=list GETÇëÇó}
+	 * æ¡ä»¶æŸ¥è¯¢POI
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi?method=list GETè¯·æ±‚}
 	 * @param string(50) $databox_id
 	 * @param array $arr_opts
 	 *	-name string poi's name
-	 *	-poi_tag string Ö»Ö§³ÖÒ»¸ö±êÇ©
+	 *	-poi_tag string åªæ”¯æŒä¸€ä¸ªæ ‡ç­¾
 	 *	-poi_importance uint32
-	 *	-bounds string(100) ¸ñÊ½£ºx1,y1;x2,y2·Ö±ð´ú±í¾ØÐÎ×óÉÏ½ÇºÍÓÒÏÂ½Ç
+	 *	-bounds string(100) æ ¼å¼ï¼šx1,y1;x2,y2åˆ†åˆ«ä»£è¡¨çŸ©å½¢å·¦ä¸Šè§’å’Œå³ä¸‹è§’
 	 *	-province_id uint32
 	 *	-province string(20)
 	 *	-city_id uint32
 	 *	-city string(20)
 	 *	-district string(20)
-	 *	-start_date string(10) ¸ñÊ½£ºYY-MM-DD
-	 *	-end_date string(10) ¸ñÊ½£ºYY-MM-DD
-	 *	-page_index uint32 Ä¬ÈÏ£º0
-	 *	-page_size uint32 Ä¬ÈÏ£º10£¬ÉÏÏÞ£º1000
-	 * @return ³É¹¦·µ»ØpoiÁÐ±íÊý×é£¬·ñÔò·µ»Øfalse¡£
+	 *	-start_date string(10) æ ¼å¼ï¼šYY-MM-DD
+	 *	-end_date string(10) æ ¼å¼ï¼šYY-MM-DD
+	 *	-page_index uint32 é»˜è®¤ï¼š0
+	 *	-page_size uint32 é»˜è®¤ï¼š10ï¼Œä¸Šé™ï¼š1000
+	 * @return æˆåŠŸè¿”å›žpoiåˆ—è¡¨æ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listPoi( $databox_id, $arr_opts = NULL ) {
 		$this->resetErrorMsg();
@@ -866,21 +866,21 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * Ìõ¼þ²éÑ¯Poi£¬·µ»ØËùÓÐ½á¹û
+	 * æ¡ä»¶æŸ¥è¯¢Poiï¼Œè¿”å›žæ‰€æœ‰ç»“æžœ
 	 * @param string(50) $databox_id
 	 * @param array $arr_opts
 	 *	-name string poi's name
-	 *	-poi_tag string Ö»Ö§³ÖÒ»¸ö±êÇ©
+	 *	-poi_tag string åªæ”¯æŒä¸€ä¸ªæ ‡ç­¾
 	 *	-poi_importance uint32
-	 *	-bounds string(100) ¸ñÊ½£ºx1,y1;x2,y2·Ö±ð´ú±í¾ØÐÎ×óÉÏ½ÇºÍÓÒÏÂ½Ç
+	 *	-bounds string(100) æ ¼å¼ï¼šx1,y1;x2,y2åˆ†åˆ«ä»£è¡¨çŸ©å½¢å·¦ä¸Šè§’å’Œå³ä¸‹è§’
 	 *	-province_id uint32
 	 *	-province string(20)
 	 *	-city_id uint32
 	 *	-city string(20)
 	 *	-district string(20)
-	 *	-start_date string(10) ¸ñÊ½£ºYY-MM-DD
-	 *	-end_date string(10) ¸ñÊ½£ºYY-MM-DD
-	 * @return ³É¹¦·µ»ØpoiÁÐ±íÊý×é£¬·ñÔò·µ»Øfalse¡£
+	 *	-start_date string(10) æ ¼å¼ï¼šYY-MM-DD
+	 *	-end_date string(10) æ ¼å¼ï¼šYY-MM-DD
+	 * @return æˆåŠŸè¿”å›žpoiåˆ—è¡¨æ•°ç»„ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listPoiAll( $databox_id, $arr_opts = NULL ) {
 		$this->resetErrorMsg();
@@ -907,11 +907,11 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * ´´½¨POIÖÐPOIEXTµÄÊý¾Ý
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poiext?method=create POSTÇëÇó}
+	 * åˆ›å»ºPOIä¸­POIEXTçš„æ•°æ®
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poiext?method=create POSTè¯·æ±‚}
 	 * @param uint64 $poi_id
 	 * @param array $arr_ext_opts
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function createPoiExt( $poi_id, $arr_ext_opts = NULL ) {
 		$this->resetErrorMsg();
@@ -947,11 +947,11 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * ÐÞ¸ÄPOIÖÐPOIEXTµÄÊý¾Ý
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poiext?method=update POSTÇëÇó}
+	 * ä¿®æ”¹POIä¸­POIEXTçš„æ•°æ®
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poiext?method=update POSTè¯·æ±‚}
 	 * @param uint64 $poi_id
 	 * @param array $arr_ext_opts
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function updatePoiExt( $poi_id, $arr_ext_opts = NULL ) {
 		$this->resetErrorMsg();
@@ -987,11 +987,11 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * É¾³ýPOIÖÐPOIEXTµÄÊý¾Ý
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poiext?method=delete POSTÇëÇó}
+	 * åˆ é™¤POIä¸­POIEXTçš„æ•°æ®
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poiext?method=delete POSTè¯·æ±‚}
 	 * @param uint64 $poi_id
-	 * @param array/string(4600) $keys property_keyÖµ¼¯£¬¿ÉÒÔÊÇÓÃ°ë½Ç¶ººÅ·Ö¸ôµÄ×Ö·û´®»òÕßÊÇÊý×é
-	 * @return ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+	 * @param array/string(4600) $keys property_keyå€¼é›†ï¼Œå¯ä»¥æ˜¯ç”¨åŠè§’é€—å·åˆ†éš”çš„å­—ç¬¦ä¸²æˆ–è€…æ˜¯æ•°ç»„
+	 * @return æˆåŠŸè¿”å›žtrueï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function deletePoiExt( $poi_id, $keys = NULL ) {
 		$this->resetErrorMsg();
@@ -1029,15 +1029,15 @@ class MyStorageService extends MyService {
 
 
 	/**
-	 * Ìõ¼þ²éÑ¯POIÖÐPOIEXTµÄÊý¾Ý
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poiext?method=list GETÇëÇó}
+	 * æ¡ä»¶æŸ¥è¯¢POIä¸­POIEXTçš„æ•°æ®
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poiext?method=list GETè¯·æ±‚}
 	 * @param uint64 $poi_id
-	 * @param array $property_key Îª¿ÕÊ±È«²¿¹Ø¼ü×ÖµÄÖµ¶¼»áÁÐ³öÀ´
-	 * @return ³É¹¦·µ»Ø²éÑ¯ÐÅÏ¢¹ØÁªÊý×é½á¹¹ÈçÏÂ£º
+	 * @param array $property_key ä¸ºç©ºæ—¶å…¨éƒ¨å…³é”®å­—çš„å€¼éƒ½ä¼šåˆ—å‡ºæ¥
+	 * @return æˆåŠŸè¿”å›žæŸ¥è¯¢ä¿¡æ¯å…³è”æ•°ç»„ç»“æž„å¦‚ä¸‹ï¼š
 	 *	-poi_id string
-	 *	-size uint32 ½á¹ûÊýÁ¿
-	 *	-poi_ext_info array poiext×Ö¶Î×Öµä
-	 *	·ñÔò·µ»Øfalse¡£
+	 *	-size uint32 ç»“æžœæ•°é‡
+	 *	-poi_ext_info array poiextå­—æ®µå­—å…¸
+	 *	å¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function listPoiExt( $poi_id, $property_key = NULL ) {
 		$this->resetErrorMsg();
@@ -1068,11 +1068,11 @@ class MyStorageService extends MyService {
 	}
 
 	/**
-	 * ÅúÁ¿ÉÏ´«POIÊý¾Ý£¬Ö»Ö§³ÖCVS
-	 * ¶ÔÓ¦API£º{@link api.map.baidu.com/geodata/poi?method=upload POSTÇëÇó}
+	 * æ‰¹é‡ä¸Šä¼ POIæ•°æ®ï¼Œåªæ”¯æŒCVS
+	 * å¯¹åº”APIï¼š{@link api.map.baidu.com/geodata/poi?method=upload POSTè¯·æ±‚}
 	 * @param uint32 $databox_id
 	 * @param string $filepath
-	 * @return ³É¹¦·µ»Øµ¼ÈëjobµÄid£¬¿ÉÒÔÊ¹ÓÃ¸Ãid²éÑ¯´ËjobµÄµ¼Èë½ø¶È£¬·ñÔò·µ»Øfalse¡£
+	 * @return æˆåŠŸè¿”å›žå¯¼å…¥jobçš„idï¼Œå¯ä»¥ä½¿ç”¨è¯¥idæŸ¥è¯¢æ­¤jobçš„å¯¼å…¥è¿›åº¦ï¼Œå¦åˆ™è¿”å›žfalseã€‚
 	 */
 	public function uploadPoi( $databox_id, $filepath ) {
 		$this->resetErrorMsg();
