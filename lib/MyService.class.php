@@ -1,6 +1,6 @@
 <?php
 /**
- * LBS个性化服务基类
+ * LBS涓�у寲鏈嶅姟鍩虹被
  * @author kuangzhijie
  * @version 1.0
  */

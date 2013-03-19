@@ -1,34 +1,34 @@
 <?php
 /**
- * ´æ´¢API½Ó¿ÚÖÐµÄÃ¶¾ÙÖµ
+ * å­˜å‚¨APIæŽ¥å£ä¸­çš„æžšä¸¾å€¼
  * @package lbs
  * @author kuangzhijie
  * @date 2012/12/24 11:49:02 
  * @version 1.0
  */
 
-// geotype µÄÃ¶¾ÙÖµ
+// geotype çš„æžšä¸¾å€¼
 define( 'GEOTYPE_POINT_POI', 1 );
 define( 'GEOTYPE_LINE_POI', 2 );
 define( 'GEOTYPE_FLAT_POI', 3 );
 
-// scope µÄÃ¶¾ÙÖµ
+// scope çš„æžšä¸¾å€¼
 define( 'SCOPE_BASIC', 1 );
 define( 'SCOPE_DETAIL', 2 );
 
-// property_type µÄÃ¶¾ÙÖµ
+// property_type çš„æžšä¸¾å€¼
 define( 'PROPERTY_INT32', 1 );
 define( 'PROPERTY_INT64', 2 );
 define( 'PROPERTY_FLOAT', 3 );
 define( 'PROPERTY_DOUBLE', 4 );
 define( 'PROPERTY_STRING', 10 );
 
-// original_coord_type µÄÃ¶¾ÙÖµ
-// ¹ú²â¾Ö¼ÓÃÜ×ø±ê
+// original_coord_type çš„æžšä¸¾å€¼
+// å›½æµ‹å±€åŠ å¯†åæ ‡
 define( 'NATION_ENCRYPT', 1 );
-// °Ù¶È¼ÓÃÜ×ø±ê
+// ç™¾åº¦åŠ å¯†åæ ‡
 define( 'BAIDU_ENCRYPT', 2 );
-// Î´¼ÓÃÜ×ø±ê
+// æœªåŠ å¯†åæ ‡
 define( 'NO_ENCRYPT', 3 );
 
 

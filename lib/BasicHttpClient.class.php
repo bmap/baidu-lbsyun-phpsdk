@@ -11,12 +11,12 @@
  * @file lib/BasicHttpClient.class.php
  * @author kuangzhijie(com@baidu.com)
  * @date 2013/01/11 16:04:55
- * @brief °üº¬HTTP Client½Ó¿ÚÓëÒ»¸ö¿ÉÊµÀı»¯µÄÄ¬ÈÏClientÀà
+ * @brief åŒ…å«HTTP Clientæ¥å£ä¸ä¸€ä¸ªå¯å®ä¾‹åŒ–çš„é»˜è®¤Clientç±»
  *  
  **/
 
 /**
- * Http Client µÄ³éÏóÀà
+ * Http Client çš„æŠ½è±¡ç±»
  */
 abstract class BasicHttpClient {
     public $useragent;
@@ -36,7 +36,7 @@ abstract class BasicHttpClient {
 
 
 /**
- * ÄÜ¼òµ¥ÊµÏÖµÄHttp ClientÀà£¬ÓÃCURLÊµÏÖ
+ * èƒ½ç®€å•å®ç°çš„Http Clientç±»ï¼Œç”¨CURLå®ç°
  */
 class SimpleHttpClient extends BasicHttpClient {
     /**
@@ -49,7 +49,7 @@ class SimpleHttpClient extends BasicHttpClient {
     }
 
     /**
-     * Ä¬ÈÏµÄ³õÊ¼»¯
+     * é»˜è®¤çš„åˆå§‹åŒ–
      */
     public function defaultInit( &$curl_handle ) {
         curl_setopt( $curl_handle, CURLOPT_USERAGENT, $this->useragent );

@@ -17,7 +17,7 @@ class BasicServiceException extends Exception {
 }
 
 /**
- * LBS API PHP SDK µÄ»ùÀà
+ * LBS API PHP SDK çš„åŸºç±»
  *
  * @package lbs
  * @author kuangzhijie
@@ -359,11 +359,11 @@ class BasicService {
 	}
 
 	/**
-	 * ¼ì²é×Ö·û´®³¤¶ÈºÏ·¨
+	 * æ£€æŸ¥å­—ç¬¦ä¸²é•¿åº¦åˆæ³•
 	 * @param string $str
 	 * @param uint32 $min
 	 * @param uint32 $max
-	 * @return boolean Èç¹ûºÏ·¨·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return boolean å¦‚æœåˆæ³•è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	protected function checkString( $str, $min, $max ) {
 		if( $min > $max ) {
@@ -378,10 +378,10 @@ class BasicService {
 	}
 	
 	/**
-	 * ¼ì²é±ØÑ¡²ÎÊıÊÇ·ñ´æÔÚ
+	 * æ£€æŸ¥å¿…é€‰å‚æ•°æ˜¯å¦å­˜åœ¨
 	 * @param array $needs
 	 * @param array $opts
-	 * @return boolean Èç¹û´æÔÚ·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return boolean å¦‚æœå­˜åœ¨è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	protected function checkNeedsExists( $needs, $opts ) {
 		foreach( $needs as $key ) {

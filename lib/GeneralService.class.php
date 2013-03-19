@@ -1,6 +1,6 @@
 <?php
 /**
- * LBSÍ¨ÓÃ·þÎñÀà»ùÀà
+ * LBSé€šç”¨æœåŠ¡ç±»åŸºç±»
  * @package lbs
  * @author kuangzhijie
  * @version 1.0
